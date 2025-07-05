@@ -1,7 +1,7 @@
 import sys
 from start_screen import create_start_screen
 from PyQt6.QtCore import QSize
-from PyQt6.QtWidgets import QApplication, QGridLayout, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -15,7 +15,11 @@ class MainWindow(QMainWindow):
         self.numberBoard = [[0 for i in range(10)] for j in range(10)]
         ## number of mines for this game. create different difficulty levels?
         self.mineCount = 0
-        self.display = QGridLayout()
+        ## checkedBoard: true for revealed, false for unknown, keeps track of which squares have been checked
+        self.checkedBoard = [[False for i in range(10)] for j in range(10)]
+        self.actionToggle = QPushButton()
+        self.display = QWidget()
+        self.flaggingOn = False
 
 if (__name__ == '__main__'):
     app = QApplication(sys.argv)
