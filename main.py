@@ -7,7 +7,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Minesweeper")
-        self.setFixedSize(QSize(500, 600))
+        self.setFixedSize(QSize(600, 600))
 
         ## mineBoard: true for mine, false for no mine
         self.mineBoard = [[False for i in range(10)] for j in range(10)]
